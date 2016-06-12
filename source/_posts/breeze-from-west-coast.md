@@ -18,7 +18,7 @@ date: 2016-06-12 11:11:42
 ## VPS的选择
 
 VPS(virtual private server)虚拟主机服务，就是你花钱租一台服务器，通过网络连上他，可以装软件或者搭服务，说虚拟是因为你不必在意他的物理存在，他可以在世界的任何一个角落。
-国内最出名的VPS要数[阿里云](https://www.aliyun.com/)了，国际上的有[Vultr](https://www.vultr.com/), [Digital Ocean](https://www.digitalocean.com/), [Linode](https://www.linode.com/)等等。
+国内最出名的VPS要数[阿里云](https://www.aliyun.com/)了，国外的有[Vultr](https://www.vultr.com/), [Digital Ocean](https://www.digitalocean.com/), [Linode](https://www.linode.com/)等等。
 
 ### 选择
 
@@ -27,7 +27,7 @@ VPS(virtual private server)虚拟主机服务，就是你花钱租一台服务�
 ### 创建实例
 
 创建实例(Droplet)的时候会要选择机房，主机配置和操作系统，机房我选择的旧金山，配置我选的最低配的(512M内存+20GB硬盘)，每月5刀，操作系统我选的Ubuntu 14.04，和我平时使用的一致。
-创建的时候还需要导入一个SSH Key， 为了验证登录的信息，一般Linux下的SSH公钥都是保存在~/.ssh/目录下，叫id_xxx.pub(xxx是加密算法，如rsa|dsa|ecdsa...)，还有一个id_xxx的是私钥文件，切不可外漏。
+创建的时候还需要导入一个SSH Key， 为了验证登录的信息，一般Linux下的SSH公钥都是保存在~/.ssh/目录下，叫id_xxx.pub(xxx是加密算法，如rsa)，还有一个id_xxx的是私钥文件，切不可外漏。
 全部信息填完后选择创建，然后就是绑信用卡付款，拿到一个IP地址，心情万分激动。
 
 
