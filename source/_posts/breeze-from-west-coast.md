@@ -70,7 +70,7 @@ $ ssserver -c /etc/shadowsocks.json
 ```
 
 ### 安装客户端
-安卓上的shadowsocks客户端相当好用，iOS我装的Shadowrockt，OS X上有GoAgent X， 配置都相当简单。
+安卓上的shadowsocks客户端相当好用，iOS我装的[Shadowrocket](https://itunes.apple.com/us/app/shadowrocket/id932747118?mt=8)，OS X上有GoAgent X， 配置都相当简单。
 我现在一般使用Chrome的SwitchyOmega插件，创建一个自动切换模式，用[gfwlist](https://github.com/gfwlist/gfwlist)上的规则过滤，凡是符合规则的都走ss代理，这样国内的网站就不必都去大洋彼岸转一圈了。
 
 每次打开ss都能感觉有风吹来，那是美国西海岸的风，带着淡淡自由的味道。
