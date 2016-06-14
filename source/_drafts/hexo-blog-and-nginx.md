@@ -18,7 +18,7 @@ tags:
 ### test
 
 
-## Install Hexo
+## Hexo
 
 ### hexo intro
 
@@ -31,10 +31,47 @@ tags:
 ### hexo workflow
 
 
-## Configure Nginx
+## Nginx
 
 ### install nginx
 
+
 ### configure
+
+
+启动nginx
+``` bash
+$ service nginx start
+```
+
+``` bash
+$ service nginx status
+```
+
+reload configure
+``` bash
+$ nginx -s reload
+```
+
+shutdown nginx
+``` bash
+$ ps -ax | grep nginx
+```
+find out the pid and sent a signal to that process
+``` bash
+$ kill -9 1628
+```
+
+
+配置文件的路径 `/etc/gningx`
+
+
+find number of cpu cores
+
+``` bash
+$ nproc
+$ 1
+```
+
 
 ### test
