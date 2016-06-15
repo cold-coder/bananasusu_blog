@@ -19,3 +19,6 @@ tags:
 ### [Upgrade nginx](https://leftshift.io/upgrading-nginx-to-the-latest-version-on-ubuntu-servers)
 
 
+## 参考链接
+- [Upgrading Nginx to the latest version on Ubuntu servers](https://leftshift.io/upgrading-nginx-to-the-latest-version-on-ubuntu-servers)
+- [Let's Encrypt 给网站加 HTTPS 完全指南](https://ksmx.me/letsencrypt-ssl-https)
