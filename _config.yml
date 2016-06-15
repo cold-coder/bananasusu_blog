@@ -74,4 +74,4 @@ deploy:
   user: yaocheng
   root: /home/yaocheng/www
   port: 22
-  delete: false #for cache
+  # delete: false #for cache
