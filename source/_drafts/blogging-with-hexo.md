@@ -30,14 +30,14 @@ tags:
 
 这里有个小插曲，在支付宝扫码付款后，网页跳转挂了，所以支付宝的钱已经扣了，域名还在购物车。无奈只能打电话找客服。
 
-![godaddy-support](/images/blogging-with-hexo/godaddy-support.png "GoDaddy的金牌客服")
+![godaddy-support](/images/blogging-with-hexo/godaddy-support-min.png "GoDaddy的金牌客服")
 
 虽然是端午小长假，不过客服还是有人的，在一番交涉后，客服妹子又给我发了个付款码，并告诉我之前的支付失败并已经退款，钱会在30天内退回到支付宝(结果第二天就到了)，扫了妹子的付款码，域名就买好了。
 
 ### 配置域名的DNS
 由于我的VPS是在Degital Ocean买的，因此需要把Digital Ocean的DNS服务器填到GoDaddy的域名配置项里面，让DNS能指向DO的主机
 
-![godaddy-dns](/images/blogging-with-hexo/gd-dns.png "将Digital Ocean提供的DNS服务器地址填写到GoDaddy域名的DNS管理页")
+![godaddy-dns](/images/blogging-with-hexo/gd-dns-min.png "将Digital Ocean提供的DNS服务器地址填写到GoDaddy域名的DNS管理页")
 
 ### Whois测试
 这时就可以用`whois bananasusu.com`命令来测试了
@@ -48,7 +48,7 @@ $
 
 ### 配置Droplet
 还差最后一步，配置DO Droplet的DNS记录，增加一条A记录(IPv4)，一条AAAA记录(IPv6)，一条CNAME记录(子域名跳转)
-![digital-ocean-dns](/images/blogging-with-hexo/do-dns.png "配置Digital Ocean的DNS")
+![digital-ocean-dns](/images/blogging-with-hexo/do-dns-min.png "配置Digital Ocean的DNS")
 
 ### ping测试
 最后，`ping`一下

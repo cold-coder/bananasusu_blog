@@ -8,7 +8,7 @@ tags:
 - let's encrypt
 ---
 
-![nginx-letsencrypt](/images/https-with-lets-encrypt/nginx-letsencrypt.png "Let's Encrypt secure our website with Nginx")
+![nginx-letsencrypt](/images/https-with-lets-encrypt/nginx-letsencrypt-min.png "Let's Encrypt secure our website with Nginx")
 
 ### Intro
 在家里电信的网络，每次用微信打开博客就会被强制重排，我的推测是网页被电信劫持，注入了广告。
@@ -85,7 +85,7 @@ IMPORTANT NOTES:
 
 
 ### 定期更新
-Let's Encrypt证书默认的有效期是90天，所以有必要在过期前就行'续约(renew)'。在Linux上我们可以通过`corntab`来创建定时job
+Let's Encrypt证书默认的有效期是90天，所以有必要在过期前就行'续约(renew)'。在Linux上我们可以通过`crontab`来创建定时job
 
 ## 配置Nginx
 
@@ -132,15 +132,15 @@ Let's Encrypt证书默认的有效期是90天，所以有必要在过期前就�
 ### 验证
 登录bananasusu.com，地址栏出现绿色的小锁和https，表明连接是加密的。
 
-![https-lock](/images/https-with-lets-encrypt/https-lock.png "出现绿色的小锁")
+![https-lock](/images/https-with-lets-encrypt/https-lock-min.png "出现绿色的小锁")
 
 查看证书
 
-![cert](/images/https-with-lets-encrypt/cert.png "Let's Encrypt CA颁发给bananasusu.com的证书")
+![cert](/images/https-with-lets-encrypt/cert-min.png "Let's Encrypt CA颁发给bananasusu.com的证书")
 
 不服再来[跑个分](https://www.ssllabs.com/ssltest/analyze.html?d=bananasusu.com)
 
-![ssl-report](/images/https-with-lets-encrypt/ssl-report-bananasusu.png "A+ 高考能加分吗")
+![ssl-report](/images/https-with-lets-encrypt/ssl-report-bananasusu-min.png "A+ 高考能加分吗")
 
 
 ## 参考链接
