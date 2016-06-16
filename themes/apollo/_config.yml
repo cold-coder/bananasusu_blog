@@ -3,7 +3,7 @@ menu:
     Archive: /archives/
     Weibo: http://weibo.com/bananasusu
     GitHub: https://github.com/cold-coder
-    Rss: /atom.xml
+    # Rss: /atom.xml
 
 favicon: /favicon.png
 logo: /favicon.png
