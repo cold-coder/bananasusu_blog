@@ -12,8 +12,10 @@ date: 2016-06-12 11:11:42
 
 ![golden gate bridge](/images/breeze-from-west-coast/golden_gate_bridge.jpg "Golden Gate Bridge")
 
-### Intro
+
 严重怀疑facebook的盗号与VPN提供商有关联，所以一向认为安全第一的我决定自己搭。
+
+<!-- more -->
 
 ## VPS的选择
 

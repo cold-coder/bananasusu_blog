@@ -10,8 +10,9 @@ tags:
 
 ![nginx-letsencrypt](/images/https-with-lets-encrypt/nginx-letsencrypt-min.png "Let's Encrypt secure our website with Nginx")
 
-### Intro
 在家里电信的网络，每次用微信打开博客就会被强制重排，我的推测是网页被电信劫持，注入了广告。
+
+<!-- more -->
 
 最早的网站采用的HTTP协议是明文传输，所以只要传输的数据被截取到，里面的内容也就没有秘密了。那谁会来劫取我们的流量呢？其实我们在浏览网页时，每次请求服务器和服务器的回复中间，都会经过重重的路由，这些路由就像是一个森林，而森林里到处都是虎视眈眈的眼睛。比如使用了公共Wifi，那么搭Wifi的人就可以截取到你的数据(所以说公共场所的Wifi最好不要连，安全第一)。
 
