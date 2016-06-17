@@ -13,7 +13,7 @@ date: 2016-06-15 09:49:51
 
 <!-- more -->
 
-### 排查
+## 排查
 
 对于这种速度，首先做的当然是打开浏览器的开发者工具的Network，看到底是哪个资源慢了。
 
@@ -27,7 +27,7 @@ date: 2016-06-15 09:49:51
 
 3. Nginx没有对静态资源开启缓存
 
-### 方案
+## 方案
 
 1. 对于博客中的图片，先进行尺寸的剪裁，然后进行压缩，确保最终大小在100kb以内。
 
@@ -88,7 +88,7 @@ $ sudo wget https://raw.githubusercontent.com/h5bp/server-configs-nginx/master/h
 	$ sudo nginx -s reload
    ```
 
-### 测试
+## 测试
 
 刷新我们的bananasusu.com,再次打开Chrome的开发者工具查看网络，我们会发现在服务器返回的资源的response中多了几个头部信息。
 比如下图这张图片，可以看到他的头部多了个`Cache-Control`的头，这个就是Nginx加上的缓存头信息，还多了一个Expires头，指定了过期的日期，注意这个日期是用格林尼治标准时间，所以是我们东8区的时间减去8小时。由于我们对图片资源设的有效期是1年，所以Expires是明天的今天。浏览器就是根据这个时间判断是从服务器拿还是直接从本地缓存取。
@@ -98,6 +98,6 @@ $ sudo wget https://raw.githubusercontent.com/h5bp/server-configs-nginx/master/h
 
 站点优化之路漫漫其修远兮，吾将上下而求索。
 
-### 参考链接
+## 参考链接
 
 - [Nginx Caching](https://serversforhackers.com/nginx-caching)

@@ -16,7 +16,7 @@ date: 2016-06-16 21:05:38
 
 <!-- more -->
 
-### 背景
+## 背景
 
 互联网刚诞生的时候，所有网站采用的HTTP协议进行传输，而HTTP是明文的，所以只要数据被截取到，里面的内容也就没有秘密了。
 
@@ -33,13 +33,13 @@ HTTPS全称是HTTP over TLS，简单说就是加密的HTTP。
 
 以前网站搭HTTPS是比较麻烦的一件事，因为需要向[CA](https://en.wikipedia.org/wiki/Certificate_authority)申请证书，直到后来有了[Let's Encrypt](https://letsencrypt.org/)，一切都变得简单了。
 
-### Let's Encrypt
+#### Let's Encrypt
 Let's Encrypt是也一个CA，它是通过[ACME(Automated Certificate Management Environment)](https://github.com/letsencrypt/acme-spec)协议来管理服务器上的证书
 >The objective of Let’s Encrypt and the ACME protocol is to make it possible to set up an HTTPS server and have it automatically obtain a browser-trusted certificate, without any human intervention. This is accomplished by running a certificate management agent on the web server.
 
-具体的工作原理在它的官网有[详细的解释](https://letsencrypt.org/how-it-works/)
+具体的工作原理在它的官网有[详细的解释](https://letsencrypt.org/how-it-works/)，简单来说就是Let's Encrypt的客户端运行在你的站点服务器上，他会在站点某个地方`.well-known目录`藏一个密码，接着通过访问你的站点去找这个密码，如果找到并验证通过，就颁给你证书。
 
-跟着Digital Ocean社区的教材我便开始了升级之路。
+Here we start~
 
 首先将github上的代码clone到本地
 
@@ -57,7 +57,7 @@ $ sudo git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
 
 Nginx重新加载配置 `sudo service nginx reload`或者`sudo nginx -s reload`
 
-### 生成证书
+#### 生成证书
 用letsencrypt的脚本生成证书， webroot-path是你网站部署的路径，d是域名
 ``` bash
 $ cd /opt/letsencrypt
@@ -93,7 +93,7 @@ IMPORTANT NOTES:
 
 
 
-### 定期更新
+#### 定期更新
 Let's Encrypt证书默认的有效期是90天，所以需要在证书过期前进行`续约(renew)`。在Linux上可以通过`crontab`来创建定时job，cron是一个scheduler，通过[特殊的语法](http://www.corntab.com/pages/crontab-gui)定义任务的执行时间，所有的任务都定义在一个文件中，用一下命令编辑这个文件
 ```bash
 $ sudo crontab -e
@@ -150,7 +150,7 @@ server {
 #### 实用小技巧 -> 如果在reload的时候报错，可以用`nginx -t`来debug
 
 
-### 验证
+#### 验证
 登录bananasusu.com，地址栏出现绿色的小锁和https，表明连接是加密的。
 
 ![https-lock](/images/https-with-lets-encrypt/https-lock-min.png "出现绿色的小锁")

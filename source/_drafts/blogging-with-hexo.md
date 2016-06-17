@@ -6,7 +6,6 @@ tags:
 - godaddy
 - digital ocean
 - hexo
-- nginx
 ---
 
 个人建站是每一个程序员都应该掌握的基本技能。
@@ -26,7 +25,7 @@ tags:
 
 `bananasusu.com`这个域名其实我很久以前就想好了，它与我的[微博ID](http://weibo.com/bananasusu)一致，前面的banana加后面的susu，翻译过来就是我微博的第一个呢称-`巴娜娜叔叔`。
 
-### 购买并付款
+#### 购买并付款
 就像其他剁手网站一样，选择你要购买的域名后加入购物车，填写域名持有人信息，然后就可以付款了，付款支持支付宝。
 
 这里有个小插曲，在支付宝扫码付款后，网页跳转挂了，所以支付宝的钱已经扣了，域名还在购物车。无奈只能打电话找客服。
@@ -47,11 +46,11 @@ $ whois bananasusu.com
 $
 ```
 
-### 配置Droplet
+#### 配置Droplet
 还差最后一步，配置DO Droplet的DNS记录，增加一条A记录(IPv4)，一条AAAA记录(IPv6)，一条CNAME记录(子域名跳转)
 ![digital-ocean-dns](/images/blogging-with-hexo/do-dns-min.png "配置Digital Ocean的DNS")
 
-### ping测试
+#### ping测试
 最后，`ping`一下
 ``` bash
 $ ping bananasusu.com
@@ -74,7 +73,7 @@ $ ping bananasusu.com
 
 好，就是它了。
 
-### 安装
+## 安装
 #### 先安装NodeJS和Git
 ``` bash
 $ sudo install nodejs git
@@ -90,58 +89,65 @@ $ git version 1.9.1
 ``` bash
 $ sudo npm install hexo-cli -g
 ```
-
-### 配置hexo
-
-### start writing
-
-### hexo workflow
-
-
-## Nginx
-
-### install nginx
-
-
-### configure
-
-
-启动nginx
-``` bash
-$ service nginx start
+安装完毕就可以使用hexo命令了
+```bash
+$ hexo init bananasusu_blog
 ```
-
-``` bash
-$ service nginx status
+进入bananasusu_blog目录，安装依赖
+```bash
+$ cd bananasusu_blog
+$ npm install
 ```
-
-reload configure
-``` bash
-$ nginx -s reload
+然后就可以开始写博客了，新建一篇文章
+```bash
+$ hexo new breeze-from-west-cost
 ```
-
-shutdown nginx
-``` bash
-$ ps -ax | grep nginx
+hexo内置一个运行静态服务器命令
+```bash
+$ hexo server
 ```
-find out the pid and sent a signal to that process
-``` bash
-$ kill -9 1628
+访问http://localhost:4000，整个站点就展现在你眼前了
+
+更多命令请访问 [Hexo Commands](https://hexo.io/docs/commands.html)
+
+#### 配置
+Hexo用过一个`_config.yml`来配置站点，[官方文档](https://hexo.io/docs/configuration.html)也有详细的说明
+
+#### 主题
+[Hexo提供了相当多的主题](https://hexo.io/themes/)，安装也相当简单，只要把主题代码clone到themes目录下，然后在`_config.yml`中启用就可以了。
+
+#### 生成静态文件
+用
+```bash
+$ hexo generate
 ```
+生成静态站点，生成目录为`public`，生成好之后可以进去用`anywhere`打开看一下，应该是和之前`hexo server`的一模一样
 
+#### 部署
+部署就是把上一步生成的静态站点目录推送的服务器上，Hexo通过插件支持多个部署平台，如[GitHub Pages](https://pages.github.com/)，[Heroku](https://www.heroku.com/)，而我是个人VPS，所以用的rsync
 
-配置文件的路径 `/etc/gningx`
-
-
-find number of cpu cores
-
-``` bash
-$ nproc
-$ 1
+先安装`hexo-deployer-rsync`
+```bash
+$ npm install hexo-deployer-rsync --save
 ```
+在配置`_config-yml`里的deploy配置项
+```yml
+deploy:
+  type: rsync
+  host: bananasusu.com
+  user: yaocheng
+  root: /var/www
+  port: 22
+```
+```html
+<div class="tip">
+	这里有个坑，虽然文档上说端口默认是22，但是上面的port端口不能省略，必须显式指定22，不然会导致部署失败。
+</div>
+```
+然后执行`hexo deploy`就可以一键部署了，这是访问bananasusu.com就可以看到发布的站点了。
 
 
-### test
 
 ## 参考链接
 - [How To Set Up a Host Name with DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean)
+- [趣谈个人建站](http://macshuo.com/?p=547)
