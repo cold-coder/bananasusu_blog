@@ -3,13 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: H
-subtitle: Personal Blog
-description: My Space
+title: Mistletoe
+subtitle: Personal Blog of Mr.Yao Cheng
+description: 技术分享&生活点滴
 author: Yao Cheng
-language: zh-Hans
+language: zh-cn
 timezone: Asia/Shanghai
-avatar: /images/avatar.png
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -64,9 +63,14 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: apollo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: rsync
+  host: bananasusu.com
+  user: yaocheng
+  root: /home/yaocheng/www
+  port: 22
+  # delete: false #for cache
