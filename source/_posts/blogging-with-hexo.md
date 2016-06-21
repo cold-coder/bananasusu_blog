@@ -43,7 +43,7 @@ date: 2016-06-21 09:42:19
 
 关于DNS的工作原理，最近阮一峰老师的[这篇文章](http://www.ruanyifeng.com/blog/2016/06/dns.html)已经说得很清楚了，我这里就不科普了。
 
-由于我的VPS是在Degital Ocean买的，因此需要把Digital Ocean的DNS服务器填到GoDaddy的域名配置项里面，让DNS能指向Digital Ocean的主机
+由于我的VPS是在Digital Ocean买的，因此需要把Digital Ocean的DNS服务器填到GoDaddy的域名配置项里面，让DNS能指向Digital Ocean的主机
 
 ![godaddy-dns](/images/blogging-with-hexo/gd-dns-min.png "将Digital Ocean提供的DNS服务器地址填写到GoDaddy域名的DNS管理页")
 
@@ -65,6 +65,7 @@ $ whois bananasusu.com
 ``` bash
 $ ping bananasusu.com
 ```
+![ping-bananasusu](/images/blogging-with-hexo/ping-bananasusu-min.png "Ping bananasusu.com")
 通了，说明域名已经跟IP成功绑定了。
 
 
