@@ -7,9 +7,9 @@ tags:
 - font
 ---
 
-![libre-baskerville-ampersands](/images/css-font-face/libre-baskerville-ampersands-min.png "Ampersand of Baskerville-italic")
+![libre-baskerville-ampersands](/images/css-font-face/libre-baskerville-ampersands.png "Ampersand of Baskerville-italic")
 
-@font-face允许我们在网页中使用自定义的字体
+@font-face允许我们在网页中使用自定义的字体。
 <!-- more -->
 
 ## 网页字体
@@ -18,7 +18,7 @@ tags:
 ``` css
 font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 ```
-上面代码中定义了一个`font-family`属性，Font Stacks中一共四个字体，之间以逗号分开(如果字体中有空格，需要加上引号)。 
+上面代码中定义了一个`font-family`属性，font stacks中一共四个字体，之间以逗号分开(如果字体中有空格，需要加上引号)。 
 
 浏览器会从左到右，找到第一个本地安装的字体并使用。
 
@@ -36,25 +36,25 @@ font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 }
 ```
 
-代码中自定义了一个名为`Source Sans Pro`的字体，在`src`中，local()先会尝试加载本地的字体，如果没有才会url()去从服务器上拿。
+代码中自定义了一个名为`Source Sans Pro`的字体，在`src`中，`local()`先会尝试加载本地的字体，如果没有才会从服务器上拿。
 
 `unicode-range`允许你指定特定字符的范围，在下一节详细解释
 
 #### unicode-range
 
-Baskerville-italic中的`&(Ampresand)`符号是很多网页设计师的最爱，通过unicode-range我们可以更方便的使用这一符号，定义一个名为Ampersand的字体
+Baskerville-italic中的`&`符号是很多网页设计师的最爱(题图右侧就是Baskerville中斜体的&)，通过unicode-range我们可以更方便的使用这一符号，定义一个名为Ampersand的字体
 ```css
 @font-face {
-	font-family:'Ampersand';
-	src: local('Baskerville-italic');
-	unicode-range: U+0026;
+  font-family:'Ampersand';
+  src: local('Baskerville-italic');
+  unicode-range: U+0026;
 }
 ```
-其中`U+0026`就是`&`的unicode，然后把`Ampersand`这个字体放在font-stacks的最前面
+其中`U+0026`就是`&`的unicode，然后把`Ampersand`这个字体放在font stacks的最前面
 
 ``` css
 p {
-	font-family: 'Ampersand', 'Avenir', 'Arial', sans-serif;
+  font-family: 'Ampersand', 'Avenir', 'Arial', sans-serif;
 }
 ```
 这样子只有`&`会使用Baskerville-italic字体，其他的都不会影响。
@@ -69,7 +69,7 @@ Google Fonts是一个云字体库，只要在html`<head>`中插入一个内联CS
 这样我们也就可以在页面使用`Source Sans Pro`字体了。
 
 <div class="tip">
-	在国内需要用[360网站卫士常用前端公共库CDN服务](http://libs.useso.com/)代替，原因你懂的。
+  在国内需要用[360网站卫士常用前端公共库CDN服务](http://libs.useso.com/)代替，原因你懂的。
 </div>
 
 ## 总结
