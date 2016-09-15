@@ -1,10 +1,9 @@
 ---
-title: 编写函数的艺术
+title: the-art-of-writing-small-and-plain-functions
 tags:
   - 技术分享
   - JavaScript
   - 翻译
-date: 2016-09-07 22:20:30
 from: https://rainsoft.io/the-art-of-writing-small-and-plain-functions/
 ---
 
