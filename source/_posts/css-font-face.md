@@ -1,10 +1,11 @@
 ---
 title: CSS @font-face
 tags:
-- 技术分享
-- Frond-End
-- CSS
-- font
+  - 技术分享
+  - Frond-End
+  - CSS
+  - font
+date: 2016-06-23 09:42:19
 ---
 
 ![libre-baskerville-ampersands](/images/css-font-face/libre-baskerville-ampersands.png "Ampersand of Baskerville-italic")
